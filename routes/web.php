@@ -43,3 +43,5 @@ Route::get('/admin_users', [AdminUserController::class, 'index'])->name('admin_u
 Route::get('/admin_users/delete/{id}', [AdminUserController::class, 'destroy']);
 Route::get('/admin_users/edit/{id}', [AdminUserController::class, 'edit']);
 Route::post('/admin_users/update/{id}', [AdminUserController::class, 'update']);
+
+Route::get('/orders/total-pending', [AuthController::class, 'getTotalPendingOrders'])->name('orders.total_pending');

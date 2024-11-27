@@ -50,4 +50,13 @@ class AuthController extends Controller
         Session::flush();
         return redirect('login');
     }
+
+    public function getTotalPendingOrders()
+    {
+        $totalPendingOrders = DB::table('orders')
+            ->where('payment_status', 'pending')
+            ->sum('total_price');
+
+        return view('orders.total_pending', compact('totalPendingOrders'));
+    }
 }
