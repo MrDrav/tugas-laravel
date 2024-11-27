@@ -35,3 +35,30 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users');
     }
 }
+
+class AddUserTypeToUsersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('user_type')->default('user');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('user_type');
+        });
+    }
+}
