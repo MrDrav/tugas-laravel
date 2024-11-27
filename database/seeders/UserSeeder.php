@@ -16,6 +16,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // Hapus data yang ada di tabel users
+        DB::table('users')->delete();
+
         DB::table('users')->insert([
             'name' => 'Admin',
             'email' => 'admin@example.com',

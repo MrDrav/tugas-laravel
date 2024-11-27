@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -45,3 +46,4 @@ Route::get('/admin_users/edit/{id}', [AdminUserController::class, 'edit']);
 Route::post('/admin_users/update/{id}', [AdminUserController::class, 'update']);
 
 Route::get('/orders/total-pending', [AuthController::class, 'getTotalPendingOrders'])->name('orders.total_pending');
+Route::get('/products/total', [ProductController::class, 'getTotalProducts'])->name('products.total');
