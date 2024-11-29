@@ -33,8 +33,9 @@ class AdminProductController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:20480',
+            'price' => 'required|numeric',
+            'stock' => 'required|numeric|min:0',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Handle image upload
@@ -46,6 +47,7 @@ class AdminProductController extends Controller
             DB::table('products')->insert([
                 'name' => $request->name,
                 'price' => $request->price,
+                'stock' => $request->stock,
                 'image' => 'product_images/' . $imageName
             ]);
         }
