@@ -23,7 +23,7 @@ class AdminPageController extends Controller
         $number_of_users = DB::table('users')->where('user_type', 'user')->count();
         $number_of_admins = DB::table('users')->where('user_type', 'admin')->count();
         $number_of_account = DB::table('users')->count();
-        $number_of_messages = DB::table('message')->count();
+        $number_of_messages = DB::table('messages')->count(); // Perbarui nama tabel di sini
 
         return view('admin_page', compact(
             'total_pendings', 'total_completed', 'number_of_orders', 'number_of_products',

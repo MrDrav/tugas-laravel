@@ -47,3 +47,4 @@ Route::post('/admin_users/update/{id}', [AdminUserController::class, 'update']);
 
 Route::get('/orders/total-pending', [AuthController::class, 'getTotalPendingOrders'])->name('orders.total_pending');
 Route::get('/products/total', [ProductController::class, 'getTotalProducts'])->name('products.total');
+Route::get('/messages/total', [AuthController::class, 'getTotalMessages'])->name('messages.total');
