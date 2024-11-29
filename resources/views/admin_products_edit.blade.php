@@ -31,7 +31,7 @@
     </form>
 </section>
 
-<!-- custom admin js file link  -->
+
 <script src="{{ asset('js/admin_script.js') }}"></script>
 
 </body>
