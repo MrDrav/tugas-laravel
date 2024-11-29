@@ -16,7 +16,8 @@ class AdminContactController extends Controller
             return redirect('login');
         }
 
-        $messages = DB::table('message')->get();
+        // Use 'messages' instead of 'message'
+        $messages = DB::table('messages')->get();
 
         return view('admin_contacts', ['messages' => $messages]);
     }

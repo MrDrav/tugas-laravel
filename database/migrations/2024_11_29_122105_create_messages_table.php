@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->text('content');
+            $table->string('name', 100);
+            $table->string('email', 100);
+            $table->string('number', 12);
+            $table->string('message', 500);
             $table->timestamps();
-
-            // Foreign key constraint
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
